@@ -26,7 +26,7 @@ const About = () => {
             type="submit"
             onClick={sendEmailVerificationLink}
             className="text-white bg-indigo-600 shadow focus:shadow-outline ml-6  focus:outline-none border-0 py-2 px-5 font-bold  hover:bg-indigo-800 rounded text-sm">
-            Verify Email
+            Verify Emailadadcdcdsc
           </button>
         </>
       );

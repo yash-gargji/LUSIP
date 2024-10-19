@@ -13,11 +13,10 @@ const HallForm = () => {
   // const { hallId, hallName } = useParams();
 
   const [hallData, setHallData] = useState({
-    name:"",location:"",capacity:"",amenities:"",description:""
+    name:"",description:"",prerequisites:"",mode:"",preferredBranch:"",facultyName:"abhi"
   });
   const [emailVerified, setEmailVerified] = useState(false);
     const[hallCreater,setHallCreater] = useState("")
-
 
 
   const userContact = async () => {
@@ -79,14 +78,14 @@ const HallForm = () => {
 
   const CreateHall = async (e) => {
     e.preventDefault();
-    const { name,location,capacity,amenities,description } = hallData;
+    const { name,description,facultyName,prerequisites,mode,preferredBranch } = hallData;
     // const {hallCreater} = hallCreater;
     // setIsLoading(true)
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/halls`,
         {
-          name,location,capacity,amenities,description ,hallCreater
+          name,description,facultyName,prerequisites,mode,preferredBranch
         },
         {
           withCredentials: true, // To include credentials in the request
@@ -166,10 +165,10 @@ const HallForm = () => {
         <div className="max-w-screen-md mx-auto p-5 my-10 bg-white shadow-2xl shadow-blue-200">
           <div className="text-center mb-16">
             <p className="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">
-            Create Hall
+            List a Project
             </p>
             <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
-              Create Your <span className="text-indigo-600">Hall </span>
+              List Your <span className="text-indigo-600">Own Project</span>
             </h3>
           </div>
   
@@ -184,7 +183,7 @@ const HallForm = () => {
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
                   htmlFor="grid-event-manager"
                 >
-                  Hall Name
+                  Project Name
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -193,7 +192,7 @@ const HallForm = () => {
                   value={hallData.name}
                   name="name"
                   onChange={handleInputs}
-                  placeholder="Hall Name"
+                  placeholder="Project Name"
                 />
               </div>
   
@@ -203,16 +202,16 @@ const HallForm = () => {
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   htmlFor="grid-capacity"
                 >
-                 Capacity
+                 Prerequisites
                 </label>
                 <input
-                  value={hallData.capacity}
-                  name="capacity"
+                  value={hallData.prerequisites}
+                  name="prerequisites"
                   onChange={handleInputs}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-capacity"
-                  type="number"
-                  placeholder="Capacity"
+                  type="text"
+                  placeholder="Enter Prerequisites Here"
                 />
               </div>
             </div>
@@ -228,16 +227,16 @@ const HallForm = () => {
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   htmlFor="grid-amenities"
                 >
-                  Amenities
+                  Mode
                 </label>
                 <input
-                  value={hallData.amenities}
-                  name="amenities"
+                  value={hallData.mode}
+                  name="mode"
                   onChange={handleInputs}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-amenities"
                   type="text"
-                  placeholder="Amenities"
+                  placeholder="Offline / Online / Both"
                 />
               </div>
   
@@ -247,16 +246,16 @@ const HallForm = () => {
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   htmlFor="grid-location"
                 >
-                  Location
+                  Preferred Branch
                 </label>
                 <input
-                  value={hallData.location}
-                  name="location"
+                  value={hallData.preferredBranch}
+                  name="preferredBranch"
                   onChange={handleInputs}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-location"
                   type="text"
-                  placeholder="Location"
+                  placeholder="Enter Preferred Branch Here"
   
                 />
               </div>
@@ -283,7 +282,7 @@ const HallForm = () => {
                   value={hallData.description}
                   name="description"
                   onChange={handleInputs}
-                  placeholder="Description"
+                  placeholder="Enter Description Here"
                 />
               </div>
             

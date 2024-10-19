@@ -26,7 +26,7 @@ const RenderUser = () => {
   if (state.userType === "admin") {
     return (
       <div>
-        <Link to="/halls">Halls</Link>
+        <Link to="/halls">Projects</Link>
       </div>
     );
   } else if (state.userType === "faculty") {

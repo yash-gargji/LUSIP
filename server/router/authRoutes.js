@@ -23,8 +23,7 @@ router.get('/logout/:userId', authController.logout);
 router.put('/updateProfile', authenticate, authController.updateProfile);
 
 
-router.get('/about', authenticate, authController.about);
-router.get('/getdata', authenticate, authController.getdata);
-router.post('/contact',authenticate, authController.contact);
+ router.get('/about', authenticate, authController.about);
+router.get('/getdata',authenticate,authController.getdata);
 
 module.exports = router;

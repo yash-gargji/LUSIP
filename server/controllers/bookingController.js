@@ -1,10 +1,7 @@
 const Booking = require('../model/bookingSchema');
-const Hall = require('../model/hallSchema');
+const Hall = require('../model/projectSchema');
 const User = require('../model/userSchema');
 const nodemailer = require("nodemailer");
-
-
-
 
 
  // transporter for sending email
@@ -18,8 +15,7 @@ const nodemailer = require("nodemailer");
 
 const generateBookingEmailTemplate = (eventName, bookedHallName, organizingClub, institution, department, bookingId) => {
   return `
-
-
+  
   <head>
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">

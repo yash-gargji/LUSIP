@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const hallSchema = new mongoose.Schema({
+const projectSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -28,6 +28,6 @@ const hallSchema = new mongoose.Schema({
   }
 });
 
-const Hall = mongoose.model('Hall', hallSchema);
+const Project = mongoose.model('PROJECT', projectSchema);
 
-module.exports = Hall;
+module.exports = Project;

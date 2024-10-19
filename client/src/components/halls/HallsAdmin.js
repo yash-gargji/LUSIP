@@ -162,12 +162,12 @@ const HallsAdmin = () => {
    <div className="py-5 md:py-0 flex container mx-auto px-6 justify-between  items-center">
    <div className="mx-auto ">
     <h1 className="text-xl  sm:text-3xl md:text-4xl lg:text-3xl xl:text-3xl text-center text-gray-800 font-black leading-7 ml-3 md:leading-10">
-   Available <span className="text-indigo-700"> Halls</span>  </h1>
+   Listed <span className="text-indigo-700"> Projects</span>  </h1>
 
    </div>
    <Link to="/hallForm">
             <button className="flex self-end focus:outline-none lg:text-lg lg:font-bold focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700  md:block bg-transparent transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-indigo-700 text-indigo-700  sm:px-8 py-1 sm:py-3 text-sm">
-              Create Hall</button>
+              Add Project</button>
           </Link>
    </div>
 
@@ -336,7 +336,7 @@ const HallsAdmin = () => {
 
         ))
       ) : (
-        <h2 className="text-2xl font-bold text-zinc-700  text-center mt-10">No halls found.</h2>
+        <h2 className="text-2xl font-bold text-zinc-700  text-center mt-10"> No Projects Listed</h2>
 
       )}
 

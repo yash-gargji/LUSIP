@@ -1,18 +1,14 @@
-const Hall = require('../model/hallSchema');
+const Hall = require('../model/projectSchema');
 const User = require("../model/userSchema");
 
 const createHall = async (req, res, next) => {
   try {
-    const { name, location, capacity,amenities,description,hallCreater } = req.body;
+    const { name,description,facultyName,prerequisites,mode,preferredBranch } = req.body;
 
-    if (!name || !location || !capacity || !amenities || !description || !hallCreater) {
-      return res.status(422).json({ error: "Please fill all details" });
-    }
-
-    if (capacity <= 0) {
-      return res.status(422).json({ error: "Please enter a valid capacity greater than zero" });
-    }
-    const hall = new Hall({ name, location, capacity,amenities,description,hallCreater });
+    // if (!name || !facultyName || !prerequisites || !mode || !description || !preferredBranch) {
+    //   return res.status(422).json({ error: "Please fill all details" });
+    // }
+    const hall = new Hall({ name,description,facultyName,prerequisites,mode,preferredBranch});
     await hall.save();
     res.status(201).json({ message: 'Hall created successfully' });
   } catch (error) {
@@ -45,7 +41,7 @@ const getHallById = async (req, res, next) => {
 const updateHall = async (req, res, next) => {
   try {
     const { hallId } = req.params;
-    const { name, location, capacity ,amenities,description} = req.body;
+    const { name,description,facultyName,prerequisites,mode,preferredBranch} = req.body;
     const currentUserMail = req.rootUser.email; // Renamed to avoid conflict
     const masterAdminmail = process.env.REACT_APP_MASTER_ADMIN;
     const hall = await Hall.findById(hallId);
@@ -61,7 +57,7 @@ const updateHall = async (req, res, next) => {
 
     const updatedHall = await Hall.findByIdAndUpdate(
       hallId,
-      { name, location, capacity, amenities, description },
+      { name,description,facultyName,prerequisites,mode,preferredBranch },
       { new: true }
     );
 

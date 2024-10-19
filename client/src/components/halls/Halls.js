@@ -87,11 +87,11 @@ const Halls = () => {
 
                     <div className="mt-6 grid grid-cols-2 gap-6 text-center lg:text-left">
                       <div>
-                        <p className="font-bold text-zinc-700">Location</p>
+                        <p className="font-bold text-zinc-700">Faculty Name : </p>
                       </div>
 
                       <div>
-                        <p className="text-m font-semibold text-zinc-700">{hall.location}</p>
+                        <p className="text-m font-semibold text-zinc-700">{hall.facultyName}</p>
                       </div>
                     </div>
 
@@ -99,21 +99,32 @@ const Halls = () => {
 
                     <div className="mt-6 grid grid-cols-2 gap-6 text-center lg:text-left">
                       <div>
-                        <p className="font-bold text-zinc-700">Capacity</p>
+                        <p className="font-bold text-zinc-700">Prerequisites</p>
                       </div>
 
                       <div>
-                        <p className="text-m font-semibold text-zinc-700">{hall.capacity}</p>
+                        <p className="text-m font-semibold text-zinc-700">{hall.prerequisites}</p>
                       </div>
                     </div>
 
                     <div className="mt-6 grid grid-cols-2 gap-6 text-center lg:text-left">
                       <div>
-                        <p className="font-bold text-zinc-700">Amenities</p>
+                        <p className="font-bold text-zinc-700">Mode</p>
                       </div>
 
                       <div>
-                        <p className="text-m font-semibold text-zinc-700">{hall.amenities}</p>
+                        <p className="text-m font-semibold text-zinc-700">{hall.mode}</p>
+                      </div>
+                    </div>
+                    
+
+                    <div className="mt-6 grid grid-cols-2 gap-6 text-center lg:text-left">
+                      <div>
+                        <p className="font-bold text-zinc-700">Preferred Branch</p>
+                      </div>
+
+                      <div>
+                        <p className="text-m font-semibold text-zinc-700">{hall.preferredBranch}</p>
                       </div>
                     </div>
 

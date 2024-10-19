@@ -511,6 +511,7 @@ const login = async (req, res,next) => {
     try {
       let token;
       const { email, password } = req.body;
+      
       if (!email || !password) {
         return res.status(400).json({ error: "Kindly complete all fields." });
       }

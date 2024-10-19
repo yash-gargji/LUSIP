@@ -29,6 +29,7 @@ const AboutUpdateForm = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const email = userData.email;
+  console.log(email);
   const emailVerified = userData.emailVerified;
 
   const VerifyButton = () => {
@@ -61,7 +62,7 @@ const AboutUpdateForm = () => {
         `${process.env.REACT_APP_SERVER_URL}/emailVerificationLink`,
         {
           email,
-          
+
         },
         {
           withCredentials: true,
@@ -94,6 +95,7 @@ const AboutUpdateForm = () => {
 
   const callAboutPage = async () => {
     try {
+      console.log("Insode Aboyut Page")
       const response = await axios.get(
         `http://localhost:5010/about`,
         {
@@ -104,8 +106,9 @@ const AboutUpdateForm = () => {
           },
         }
       );
+      console.log(response);
       const data = response.data;
-      // console.log(data);
+       console.log(data);
       setUserData(data);
       setOriginalData(data);
       setIsLoading(false);
@@ -289,26 +292,18 @@ const AboutUpdateForm = () => {
                       )}
                     </div>
                   </div>
-                  {userData.userType !== "admin" && (
+                  {/* {userData.userType !== "admin" && (
                     <>
                       <div className="mt-6 grid grid-cols-3 gap-8 text-center items-center lg:text-left">
                         <div>
                           <p className="font-bold text-zinc-700">Institution</p>
                         </div>
                         <div>
-                          {/* {isEditing ? (
-                            <input
-                              type="text"
-                              name="institution"
-                              value={userData.institution}
-                              onChange={handleInputs}
-                              className="text-m font-semibold text-zinc-700 border-b-2 border-gray-300 focus:outline-none"
-                            />
-                          ) : ( */}
+                          
                             <p className="text-m font-semibold text-zinc-700">
                               {userData.institution} - {institutionName}
                             </p>
-                          {/* )} */}
+                          
                         </div>
                       </div>
                       {userData.department !== "null" &&
@@ -328,7 +323,7 @@ const AboutUpdateForm = () => {
 
                      
                     </>
-                  )}
+                  )} */}
 {/* 
 
 {userData.userType === "faculty" && (
